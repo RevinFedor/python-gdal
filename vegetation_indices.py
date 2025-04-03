@@ -111,7 +111,7 @@ def process_infrared_by_blocks(input_file, output_file, block_size=4096, num_wor
         dst_ds = driver.Create(
             output_file,
             width, height, 4, gdal.GDT_Byte,
-            options=["COMPRESS=LZW", "PREDICTOR=2", "TILED=YES",
+            options=["BIGTIFF=YES", "COMPRESS=LZW", "PREDICTOR=2", "TILED=YES",
                      "BLOCKXSIZE=512", "BLOCKYSIZE=512"]
         )
         dst_ds.SetGeoTransform(src_ds.GetGeoTransform())
@@ -240,7 +240,7 @@ def process_ndvi_by_blocks(input_file, output_file, block_size=4096, num_workers
         dst_ds = driver.Create(
             output_file,
             width, height, 4, gdal.GDT_Byte,
-            options=["COMPRESS=LZW", "PREDICTOR=2", "TILED=YES",
+            options=["BIGTIFF=YES", "COMPRESS=LZW", "PREDICTOR=2", "TILED=YES",
                      "BLOCKXSIZE=512", "BLOCKYSIZE=512"]
         )
         dst_ds.SetGeoTransform(src_ds.GetGeoTransform())
@@ -355,7 +355,7 @@ def process_vari_by_blocks(input_file, output_file, block_size=4096, num_workers
         dst_ds = driver.Create(
             output_file,
             width, height, 4, gdal.GDT_Byte,
-            options=["COMPRESS=LZW", "PREDICTOR=2", "TILED=YES",
+            options=["BIGTIFF=YES", "COMPRESS=LZW", "PREDICTOR=2", "TILED=YES",
                      "BLOCKXSIZE=512", "BLOCKYSIZE=512"]
         )
         dst_ds.SetGeoTransform(src_ds.GetGeoTransform())
